@@ -1,0 +1,16 @@
+program cashier system
+
+//declarate variable
+READ AND WRITE "name_item" with character
+READ AND WRITE "price_item" with number
+READ AND WRITE "total_item" with number
+READ AND WRITE "change" with number
+READ AND WRITE "cart" STORE with nested array[["name_item","price_item", "total_item"], [], [], [], ...total cart will be input]
+
+//algorithm to calculate total_cart
+READ AND WRITE "total_cart" with number
+READ AND WRITE "i" STORE with number 0
+WHILE "i" less than length array "cart"
+    DO
+    STORE "total_cart" with CALCULATE "total_cart" addition ("cart[i][0]" multiply by "cart[i][1]")
+    STORE "i" with CALCULATE "i" sum 1
