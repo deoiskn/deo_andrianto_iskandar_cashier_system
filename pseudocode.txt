@@ -1,6 +1,6 @@
 program cashier system
 
-//declarate variable
+//declare variable
 READ AND WRITE "name_item" with character
 READ AND WRITE "price_item" with number
 READ AND WRITE "total_item" with number
@@ -14,3 +14,24 @@ WHILE "i" less than length array "cart"
     DO
     STORE "total_cart" with CALCULATE "total_cart" addition ("cart[i][0]" multiply by "cart[i][1]")
     STORE "i" with CALCULATE "i" sum 1
+
+//algorithm to get discount
+READ AND WITE "discount" with boolean
+IF "discount" is equal to "TRUE"
+    READ AND WRITE "discount_amount" with number by percent
+    STORE "total_cart" with CALCULATE "total_cart" subtraction ("total_cart" multiply by "discount_amount")
+
+READ AND WRITE "money" with number
+WHILE "money" < "total_cart"
+    DO
+    print "not enough money, please input right money"
+    READ AND WRITE "money" with number
+READ AND WRITE "change" STORE with "money" subtraction "total_cart"
+
+//print document recipt
+READ AND WRITE "i" STORE with number 0
+WHILE "i" less than length array "cart"
+    print ""cart[i][0]" + "cart[i][1]" + "cart[i][2]"
+print "total_cart"
+print "money"
+print "change"
